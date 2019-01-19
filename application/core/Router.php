@@ -1,4 +1,7 @@
 <?php
+    /**
+     * Самое интересное, без комментариев :)
+     */
     class Router {
         public $url, $routes, $result;
         public function __construct($routes) {
@@ -45,8 +48,8 @@
             return array(
                 "url" => $url,
                 "regexp" => $route["regexp"],
-                "controller" => ucfirst(strtolower($route["controller"]))."Controller",
-                "method" => strtolower($route["method"])."Action",
+                "controller" => ucfirst($route["controller"])."Controller",
+                "method" => $route["method"]."Action",
                 "params" => $params
             );
         }

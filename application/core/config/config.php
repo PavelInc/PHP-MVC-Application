@@ -1,9 +1,16 @@
 <?php
+    /**
+     * Конфигурационный файл
+     */
     return array(
-        "debug" => true,
-        "dbconfig" => "localhost;root;;mvc",
-        "routes" => array(
-            // ["REGEXP", ["CONTROLLER/METHOD"], [PARAMS]]
+        "debug" => true, // Дебаг
+        "dbconfig" => "localhost;root;;mvc", // Данные для подключения к БД. Хост;Пользователь;Пароль;Название БД
+        "routes" => array( // Маршруты (ЧПУ ссылки)
+            // ["Регулярное выражение (для ссылки)", ["Контроллер (main -> MainController.php)", "Метод контроллера (index -> indexAction())"], [Параметры в ссылке]]
+            // Пример: ["\/user\/([0-9]+)", ["user", "show"], ["userId"]]
+            // \/user\/([0-9]+) -> site.ru/user/582 (582 - любое число, айди пользователя)
+            // Контроллер: UserController, метод: showAction
+            // userId - передаётся в контроллёр. Доступно в любом методе контроллёра при помощи $this->params["название параметра"], например $userId = $this->params["userId"]; $userId = 582
             ["\/", ["main", "index"], []],
         )
     );

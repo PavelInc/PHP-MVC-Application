@@ -1,4 +1,7 @@
 <?php
+    /**
+     * Рендерит шаблоны
+     */
     class View {
         public static function template($name, $data) {
             $file = templates.$name.".php";

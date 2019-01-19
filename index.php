@@ -1,5 +1,5 @@
 <?php
-    #region Paths
+    #region Пути к папкам (константы)
     define("root", dirname(__FILE__)."/");
     define("app", root."application/");
     define("core", app."core/");
@@ -10,5 +10,5 @@
     define("layouts", views."layouts/");
     define("templates", views."templates/");
     #endregion
-    require app."load.php";
+    require app."load.php"; // По названию понятно. /application/load.php
 ?>
